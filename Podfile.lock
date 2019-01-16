@@ -1,0 +1,22 @@
+PODS:
+  - "NSURL+QueryDictionary (1.2.0)"
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
+
+DEPENDENCIES:
+  - "NSURL+QueryDictionary (~> 1.2)"
+  - SDWebImage (~> 4.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - "NSURL+QueryDictionary"
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  "NSURL+QueryDictionary": bae616404e2adf6409d3d5c02a093cbf44c8a236
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+
+PODFILE CHECKSUM: 12572fd5ffe74679253252390f3c25a97f1ba9b2
+
+COCOAPODS: 1.5.3

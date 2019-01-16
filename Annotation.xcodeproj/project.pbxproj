@@ -1,0 +1,639 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0968BAA4C1CBF096D068AF7B /* Pods_Annotation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A06AD38B4EBFB5701C26E0 /* Pods_Annotation.framework */; };
+		9AEC905A21EF2B7500A332E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC905921EF2B7500A332E7 /* AppDelegate.m */; };
+		9AEC905D21EF2B7500A332E7 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC905C21EF2B7500A332E7 /* FirstViewController.m */; };
+		9AEC906021EF2B7500A332E7 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC905F21EF2B7500A332E7 /* SecondViewController.m */; };
+		9AEC906321EF2B7500A332E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AEC906121EF2B7500A332E7 /* Main.storyboard */; };
+		9AEC906521EF2B7700A332E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AEC906421EF2B7700A332E7 /* Assets.xcassets */; };
+		9AEC906821EF2B7700A332E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AEC906621EF2B7700A332E7 /* LaunchScreen.storyboard */; };
+		9AEC906B21EF2B7700A332E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC906A21EF2B7700A332E7 /* main.m */; };
+		9AEC907521EF2B7800A332E7 /* AnnotationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC907421EF2B7800A332E7 /* AnnotationTests.m */; };
+		9AEC908021EF2B7800A332E7 /* AnnotationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC907F21EF2B7800A332E7 /* AnnotationUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9AEC907121EF2B7800A332E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AEC904D21EF2B7400A332E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AEC905421EF2B7400A332E7;
+			remoteInfo = Annotation;
+		};
+		9AEC907C21EF2B7800A332E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AEC904D21EF2B7400A332E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AEC905421EF2B7400A332E7;
+			remoteInfo = Annotation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		60C76B60AA2F3675EDB2759D /* Pods-Annotation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Annotation.release.xcconfig"; path = "Pods/Target Support Files/Pods-Annotation/Pods-Annotation.release.xcconfig"; sourceTree = "<group>"; };
+		756DDCD0EFC1B131E0186369 /* Pods-Annotation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Annotation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Annotation/Pods-Annotation.debug.xcconfig"; sourceTree = "<group>"; };
+		9AEC905521EF2B7500A332E7 /* Annotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Annotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AEC905821EF2B7500A332E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9AEC905921EF2B7500A332E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9AEC905B21EF2B7500A332E7 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		9AEC905C21EF2B7500A332E7 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		9AEC905E21EF2B7500A332E7 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		9AEC905F21EF2B7500A332E7 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		9AEC906221EF2B7500A332E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9AEC906421EF2B7700A332E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9AEC906721EF2B7700A332E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9AEC906921EF2B7700A332E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AEC906A21EF2B7700A332E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9AEC907021EF2B7800A332E7 /* AnnotationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnnotationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AEC907421EF2B7800A332E7 /* AnnotationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnnotationTests.m; sourceTree = "<group>"; };
+		9AEC907621EF2B7800A332E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AEC907B21EF2B7800A332E7 /* AnnotationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnnotationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AEC907F21EF2B7800A332E7 /* AnnotationUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnnotationUITests.m; sourceTree = "<group>"; };
+		9AEC908121EF2B7800A332E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1A06AD38B4EBFB5701C26E0 /* Pods_Annotation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Annotation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9AEC905221EF2B7400A332E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0968BAA4C1CBF096D068AF7B /* Pods_Annotation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AEC906D21EF2B7800A332E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AEC907821EF2B7800A332E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4BF9CEB750C28B68B78AB5BA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				756DDCD0EFC1B131E0186369 /* Pods-Annotation.debug.xcconfig */,
+				60C76B60AA2F3675EDB2759D /* Pods-Annotation.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9AEC904C21EF2B7400A332E7 = {
+			isa = PBXGroup;
+			children = (
+				9AEC905721EF2B7500A332E7 /* Annotation */,
+				9AEC907321EF2B7800A332E7 /* AnnotationTests */,
+				9AEC907E21EF2B7800A332E7 /* AnnotationUITests */,
+				9AEC905621EF2B7500A332E7 /* Products */,
+				4BF9CEB750C28B68B78AB5BA /* Pods */,
+				D9734924A2443699D0662351 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9AEC905621EF2B7500A332E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9AEC905521EF2B7500A332E7 /* Annotation.app */,
+				9AEC907021EF2B7800A332E7 /* AnnotationTests.xctest */,
+				9AEC907B21EF2B7800A332E7 /* AnnotationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9AEC905721EF2B7500A332E7 /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				9AEC905821EF2B7500A332E7 /* AppDelegate.h */,
+				9AEC905921EF2B7500A332E7 /* AppDelegate.m */,
+				9AEC905B21EF2B7500A332E7 /* FirstViewController.h */,
+				9AEC905C21EF2B7500A332E7 /* FirstViewController.m */,
+				9AEC905E21EF2B7500A332E7 /* SecondViewController.h */,
+				9AEC905F21EF2B7500A332E7 /* SecondViewController.m */,
+				9AEC906121EF2B7500A332E7 /* Main.storyboard */,
+				9AEC906421EF2B7700A332E7 /* Assets.xcassets */,
+				9AEC906621EF2B7700A332E7 /* LaunchScreen.storyboard */,
+				9AEC906921EF2B7700A332E7 /* Info.plist */,
+				9AEC906A21EF2B7700A332E7 /* main.m */,
+			);
+			path = Annotation;
+			sourceTree = "<group>";
+		};
+		9AEC907321EF2B7800A332E7 /* AnnotationTests */ = {
+			isa = PBXGroup;
+			children = (
+				9AEC907421EF2B7800A332E7 /* AnnotationTests.m */,
+				9AEC907621EF2B7800A332E7 /* Info.plist */,
+			);
+			path = AnnotationTests;
+			sourceTree = "<group>";
+		};
+		9AEC907E21EF2B7800A332E7 /* AnnotationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9AEC907F21EF2B7800A332E7 /* AnnotationUITests.m */,
+				9AEC908121EF2B7800A332E7 /* Info.plist */,
+			);
+			path = AnnotationUITests;
+			sourceTree = "<group>";
+		};
+		D9734924A2443699D0662351 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1A06AD38B4EBFB5701C26E0 /* Pods_Annotation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9AEC905421EF2B7400A332E7 /* Annotation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AEC908421EF2B7800A332E7 /* Build configuration list for PBXNativeTarget "Annotation" */;
+			buildPhases = (
+				2970C1C7262E048867894780 /* [CP] Check Pods Manifest.lock */,
+				9AEC905121EF2B7400A332E7 /* Sources */,
+				9AEC905221EF2B7400A332E7 /* Frameworks */,
+				9AEC905321EF2B7400A332E7 /* Resources */,
+				4751187CF48DE1EF04B1B8FD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Annotation;
+			productName = Annotation;
+			productReference = 9AEC905521EF2B7500A332E7 /* Annotation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9AEC906F21EF2B7800A332E7 /* AnnotationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AEC908721EF2B7800A332E7 /* Build configuration list for PBXNativeTarget "AnnotationTests" */;
+			buildPhases = (
+				9AEC906C21EF2B7800A332E7 /* Sources */,
+				9AEC906D21EF2B7800A332E7 /* Frameworks */,
+				9AEC906E21EF2B7800A332E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9AEC907221EF2B7800A332E7 /* PBXTargetDependency */,
+			);
+			name = AnnotationTests;
+			productName = AnnotationTests;
+			productReference = 9AEC907021EF2B7800A332E7 /* AnnotationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9AEC907A21EF2B7800A332E7 /* AnnotationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AEC908A21EF2B7800A332E7 /* Build configuration list for PBXNativeTarget "AnnotationUITests" */;
+			buildPhases = (
+				9AEC907721EF2B7800A332E7 /* Sources */,
+				9AEC907821EF2B7800A332E7 /* Frameworks */,
+				9AEC907921EF2B7800A332E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9AEC907D21EF2B7800A332E7 /* PBXTargetDependency */,
+			);
+			name = AnnotationUITests;
+			productName = AnnotationUITests;
+			productReference = 9AEC907B21EF2B7800A332E7 /* AnnotationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9AEC904D21EF2B7400A332E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = doai.ai;
+				TargetAttributes = {
+					9AEC905421EF2B7400A332E7 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					9AEC906F21EF2B7800A332E7 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 9AEC905421EF2B7400A332E7;
+					};
+					9AEC907A21EF2B7800A332E7 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 9AEC905421EF2B7400A332E7;
+					};
+				};
+			};
+			buildConfigurationList = 9AEC905021EF2B7400A332E7 /* Build configuration list for PBXProject "Annotation" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9AEC904C21EF2B7400A332E7;
+			productRefGroup = 9AEC905621EF2B7500A332E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9AEC905421EF2B7400A332E7 /* Annotation */,
+				9AEC906F21EF2B7800A332E7 /* AnnotationTests */,
+				9AEC907A21EF2B7800A332E7 /* AnnotationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9AEC905321EF2B7400A332E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AEC906821EF2B7700A332E7 /* LaunchScreen.storyboard in Resources */,
+				9AEC906521EF2B7700A332E7 /* Assets.xcassets in Resources */,
+				9AEC906321EF2B7500A332E7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AEC906E21EF2B7800A332E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AEC907921EF2B7800A332E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2970C1C7262E048867894780 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Annotation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4751187CF48DE1EF04B1B8FD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Annotation/Pods-Annotation-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/NSURL+QueryDictionary/NSURL_QueryDictionary.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSURL_QueryDictionary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Annotation/Pods-Annotation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9AEC905121EF2B7400A332E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AEC906021EF2B7500A332E7 /* SecondViewController.m in Sources */,
+				9AEC905A21EF2B7500A332E7 /* AppDelegate.m in Sources */,
+				9AEC906B21EF2B7700A332E7 /* main.m in Sources */,
+				9AEC905D21EF2B7500A332E7 /* FirstViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AEC906C21EF2B7800A332E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AEC907521EF2B7800A332E7 /* AnnotationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AEC907721EF2B7800A332E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AEC908021EF2B7800A332E7 /* AnnotationUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9AEC907221EF2B7800A332E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9AEC905421EF2B7400A332E7 /* Annotation */;
+			targetProxy = 9AEC907121EF2B7800A332E7 /* PBXContainerItemProxy */;
+		};
+		9AEC907D21EF2B7800A332E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9AEC905421EF2B7400A332E7 /* Annotation */;
+			targetProxy = 9AEC907C21EF2B7800A332E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9AEC906121EF2B7500A332E7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AEC906221EF2B7500A332E7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9AEC906621EF2B7700A332E7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9AEC906721EF2B7700A332E7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9AEC908221EF2B7800A332E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9AEC908321EF2B7800A332E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9AEC908521EF2B7800A332E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 756DDCD0EFC1B131E0186369 /* Pods-Annotation.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Annotation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ai.doai.Annotation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		9AEC908621EF2B7800A332E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60C76B60AA2F3675EDB2759D /* Pods-Annotation.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Annotation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ai.doai.Annotation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		9AEC908821EF2B7800A332E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LEWXC28NJ5;
+				INFOPLIST_FILE = AnnotationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ai.doai.AnnotationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Annotation.app/Annotation";
+			};
+			name = Debug;
+		};
+		9AEC908921EF2B7800A332E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LEWXC28NJ5;
+				INFOPLIST_FILE = AnnotationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ai.doai.AnnotationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Annotation.app/Annotation";
+			};
+			name = Release;
+		};
+		9AEC908B21EF2B7800A332E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LEWXC28NJ5;
+				INFOPLIST_FILE = AnnotationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ai.doai.AnnotationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Annotation;
+			};
+			name = Debug;
+		};
+		9AEC908C21EF2B7800A332E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LEWXC28NJ5;
+				INFOPLIST_FILE = AnnotationUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ai.doai.AnnotationUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Annotation;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9AEC905021EF2B7400A332E7 /* Build configuration list for PBXProject "Annotation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AEC908221EF2B7800A332E7 /* Debug */,
+				9AEC908321EF2B7800A332E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9AEC908421EF2B7800A332E7 /* Build configuration list for PBXNativeTarget "Annotation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AEC908521EF2B7800A332E7 /* Debug */,
+				9AEC908621EF2B7800A332E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9AEC908721EF2B7800A332E7 /* Build configuration list for PBXNativeTarget "AnnotationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AEC908821EF2B7800A332E7 /* Debug */,
+				9AEC908921EF2B7800A332E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9AEC908A21EF2B7800A332E7 /* Build configuration list for PBXNativeTarget "AnnotationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AEC908B21EF2B7800A332E7 /* Debug */,
+				9AEC908C21EF2B7800A332E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9AEC904D21EF2B7400A332E7 /* Project object */;
+}
