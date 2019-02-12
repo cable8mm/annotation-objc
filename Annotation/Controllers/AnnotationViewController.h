@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AnnotationViewController : UIViewController
-
+@property (nonatomic, retain) NSDictionary *responseOsRawPicture;
 @end
 
 NS_ASSUME_NONNULL_END

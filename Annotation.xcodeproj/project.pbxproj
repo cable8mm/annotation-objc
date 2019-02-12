@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0968BAA4C1CBF096D068AF7B /* Pods_Annotation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1A06AD38B4EBFB5701C26E0 /* Pods_Annotation.framework */; };
+		9A3EA9642211B33C00654254 /* DismissController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA9632211B33C00654254 /* DismissController.m */; };
+		9A3EA96C2211DA3200654254 /* doai_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A3EA96B2211DA3200654254 /* doai_logo.jpg */; };
+		9A3EA96E2211E90100654254 /* visual-where.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A3EA96D2211E90100654254 /* visual-where.png */; };
+		9A6C90B8220FEFB500938542 /* SettingSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C90B7220FEFB500938542 /* SettingSplitViewController.m */; };
+		9A6C90BB220FFD4200938542 /* PictureCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C90BA220FFD4100938542 /* PictureCollectionViewController.m */; };
+		9A6C90BE221053E300938542 /* 10017_right_o_.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6C90BD221053E300938542 /* 10017_right_o_.png */; };
+		9A6C90C1221067DF00938542 /* AnnotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C90C0221067DF00938542 /* AnnotationViewController.m */; };
 		9AEC905A21EF2B7500A332E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC905921EF2B7500A332E7 /* AppDelegate.m */; };
-		9AEC905D21EF2B7500A332E7 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC905C21EF2B7500A332E7 /* FirstViewController.m */; };
-		9AEC906021EF2B7500A332E7 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEC905F21EF2B7500A332E7 /* SecondViewController.m */; };
 		9AEC906321EF2B7500A332E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AEC906121EF2B7500A332E7 /* Main.storyboard */; };
 		9AEC906521EF2B7700A332E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AEC906421EF2B7700A332E7 /* Assets.xcassets */; };
 		9AEC906821EF2B7700A332E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AEC906621EF2B7700A332E7 /* LaunchScreen.storyboard */; };
@@ -39,13 +44,21 @@
 /* Begin PBXFileReference section */
 		60C76B60AA2F3675EDB2759D /* Pods-Annotation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Annotation.release.xcconfig"; path = "Pods/Target Support Files/Pods-Annotation/Pods-Annotation.release.xcconfig"; sourceTree = "<group>"; };
 		756DDCD0EFC1B131E0186369 /* Pods-Annotation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Annotation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Annotation/Pods-Annotation.debug.xcconfig"; sourceTree = "<group>"; };
+		9A3EA9622211B33C00654254 /* DismissController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DismissController.h; sourceTree = "<group>"; };
+		9A3EA9632211B33C00654254 /* DismissController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DismissController.m; sourceTree = "<group>"; };
+		9A3EA96A2211C12400654254 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9A3EA96B2211DA3200654254 /* doai_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doai_logo.jpg; sourceTree = "<group>"; };
+		9A3EA96D2211E90100654254 /* visual-where.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visual-where.png"; sourceTree = "<group>"; };
+		9A6C90B6220FEFB500938542 /* SettingSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingSplitViewController.h; sourceTree = "<group>"; };
+		9A6C90B7220FEFB500938542 /* SettingSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingSplitViewController.m; sourceTree = "<group>"; };
+		9A6C90B9220FFD4100938542 /* PictureCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PictureCollectionViewController.h; sourceTree = "<group>"; };
+		9A6C90BA220FFD4100938542 /* PictureCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureCollectionViewController.m; sourceTree = "<group>"; };
+		9A6C90BD221053E300938542 /* 10017_right_o_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10017_right_o_.png; sourceTree = "<group>"; };
+		9A6C90BF221067DF00938542 /* AnnotationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnnotationViewController.h; sourceTree = "<group>"; };
+		9A6C90C0221067DF00938542 /* AnnotationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnnotationViewController.m; sourceTree = "<group>"; };
 		9AEC905521EF2B7500A332E7 /* Annotation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Annotation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AEC905821EF2B7500A332E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9AEC905921EF2B7500A332E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9AEC905B21EF2B7500A332E7 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		9AEC905C21EF2B7500A332E7 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		9AEC905E21EF2B7500A332E7 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		9AEC905F21EF2B7500A332E7 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		9AEC906221EF2B7500A332E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9AEC906421EF2B7700A332E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AEC906721EF2B7700A332E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,9 +108,49 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9A3EA9612211B31800654254 /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				9A3EA9622211B33C00654254 /* DismissController.h */,
+				9A3EA9632211B33C00654254 /* DismissController.m */,
+			);
+			path = Segues;
+			sourceTree = "<group>";
+		};
+		9A3EA9652211BED100654254 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		9A6C90B5220FEF4800938542 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9A6C90B6220FEFB500938542 /* SettingSplitViewController.h */,
+				9A6C90B7220FEFB500938542 /* SettingSplitViewController.m */,
+				9A6C90B9220FFD4100938542 /* PictureCollectionViewController.h */,
+				9A6C90BA220FFD4100938542 /* PictureCollectionViewController.m */,
+				9A6C90BF221067DF00938542 /* AnnotationViewController.h */,
+				9A6C90C0221067DF00938542 /* AnnotationViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9A6C90BC2210511800938542 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9A3EA96B2211DA3200654254 /* doai_logo.jpg */,
+				9A3EA96D2211E90100654254 /* visual-where.png */,
+				9A6C90BD221053E300938542 /* 10017_right_o_.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		9AEC904C21EF2B7400A332E7 = {
 			isa = PBXGroup;
 			children = (
+				9A3EA96A2211C12400654254 /* PrefixHeader.pch */,
 				9AEC905721EF2B7500A332E7 /* Annotation */,
 				9AEC907321EF2B7800A332E7 /* AnnotationTests */,
 				9AEC907E21EF2B7800A332E7 /* AnnotationUITests */,
@@ -120,12 +173,12 @@
 		9AEC905721EF2B7500A332E7 /* Annotation */ = {
 			isa = PBXGroup;
 			children = (
+				9A3EA9652211BED100654254 /* Libraries */,
+				9A3EA9612211B31800654254 /* Segues */,
+				9A6C90BC2210511800938542 /* Images */,
+				9A6C90B5220FEF4800938542 /* Controllers */,
 				9AEC905821EF2B7500A332E7 /* AppDelegate.h */,
 				9AEC905921EF2B7500A332E7 /* AppDelegate.m */,
-				9AEC905B21EF2B7500A332E7 /* FirstViewController.h */,
-				9AEC905C21EF2B7500A332E7 /* FirstViewController.m */,
-				9AEC905E21EF2B7500A332E7 /* SecondViewController.h */,
-				9AEC905F21EF2B7500A332E7 /* SecondViewController.m */,
 				9AEC906121EF2B7500A332E7 /* Main.storyboard */,
 				9AEC906421EF2B7700A332E7 /* Assets.xcassets */,
 				9AEC906621EF2B7700A332E7 /* LaunchScreen.storyboard */,
@@ -266,9 +319,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A6C90BE221053E300938542 /* 10017_right_o_.png in Resources */,
 				9AEC906821EF2B7700A332E7 /* LaunchScreen.storyboard in Resources */,
 				9AEC906521EF2B7700A332E7 /* Assets.xcassets in Resources */,
+				9A3EA96E2211E90100654254 /* visual-where.png in Resources */,
 				9AEC906321EF2B7500A332E7 /* Main.storyboard in Resources */,
+				9A3EA96C2211DA3200654254 /* doai_logo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,11 +370,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Annotation/Pods-Annotation-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/NSURL+QueryDictionary/NSURL_QueryDictionary.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSURL_QueryDictionary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
@@ -334,10 +392,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AEC906021EF2B7500A332E7 /* SecondViewController.m in Sources */,
+				9A6C90C1221067DF00938542 /* AnnotationViewController.m in Sources */,
+				9A6C90B8220FEFB500938542 /* SettingSplitViewController.m in Sources */,
 				9AEC905A21EF2B7500A332E7 /* AppDelegate.m in Sources */,
 				9AEC906B21EF2B7700A332E7 /* main.m in Sources */,
-				9AEC905D21EF2B7500A332E7 /* FirstViewController.m in Sources */,
+				9A3EA9642211B33C00654254 /* DismissController.m in Sources */,
+				9A6C90BB220FFD4200938542 /* PictureCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,11 +570,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2823YAZ88U;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = Annotation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ai.doai.Annotation;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.doai.annotation-tool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -526,11 +590,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2823YAZ88U;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = Annotation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ai.doai.Annotation;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ai.doai.annotation-tool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -543,7 +611,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LEWXC28NJ5;
 				INFOPLIST_FILE = AnnotationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ai.doai.AnnotationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -558,7 +630,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LEWXC28NJ5;
 				INFOPLIST_FILE = AnnotationTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ai.doai.AnnotationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -572,7 +648,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LEWXC28NJ5;
 				INFOPLIST_FILE = AnnotationUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ai.doai.AnnotationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -586,7 +666,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LEWXC28NJ5;
 				INFOPLIST_FILE = AnnotationUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ai.doai.AnnotationUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
