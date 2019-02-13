@@ -64,9 +64,9 @@
 
 -(void) drawPath:(id) sender
 {
-    [self.path moveToPoint:CGPointMake(0, 0)];
-    [self.path addLineToPoint:CGPointMake(100, 0)];
-    [self.path addLineToPoint:CGPointMake(100, 100)];
+//    [self.path moveToPoint:CGPointMake(0, 0)];
+//    [self.path addLineToPoint:CGPointMake(100, 0)];
+//    [self.path addLineToPoint:CGPointMake(100, 100)];
 }
 
 -(void) showHideNavbar:(id) sender

@@ -11,7 +11,7 @@
 		9A3EA9642211B33C00654254 /* DismissController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA9632211B33C00654254 /* DismissController.m */; };
 		9A3EA96C2211DA3200654254 /* doai_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A3EA96B2211DA3200654254 /* doai_logo.jpg */; };
 		9A3EA96E2211E90100654254 /* visual-where.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A3EA96D2211E90100654254 /* visual-where.png */; };
-		9A6C90B8220FEFB500938542 /* SettingSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C90B7220FEFB500938542 /* SettingSplitViewController.m */; };
+		9A3EA97122128CE000654254 /* PictureTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA97022128CE000654254 /* PictureTypeTableViewController.m */; };
 		9A6C90BB220FFD4200938542 /* PictureCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C90BA220FFD4100938542 /* PictureCollectionViewController.m */; };
 		9A6C90BE221053E300938542 /* 10017_right_o_.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6C90BD221053E300938542 /* 10017_right_o_.png */; };
 		9A6C90C1221067DF00938542 /* AnnotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C90C0221067DF00938542 /* AnnotationViewController.m */; };
@@ -49,8 +49,8 @@
 		9A3EA96A2211C12400654254 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9A3EA96B2211DA3200654254 /* doai_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doai_logo.jpg; sourceTree = "<group>"; };
 		9A3EA96D2211E90100654254 /* visual-where.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visual-where.png"; sourceTree = "<group>"; };
-		9A6C90B6220FEFB500938542 /* SettingSplitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingSplitViewController.h; sourceTree = "<group>"; };
-		9A6C90B7220FEFB500938542 /* SettingSplitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingSplitViewController.m; sourceTree = "<group>"; };
+		9A3EA96F22128CE000654254 /* PictureTypeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PictureTypeTableViewController.h; sourceTree = "<group>"; };
+		9A3EA97022128CE000654254 /* PictureTypeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureTypeTableViewController.m; sourceTree = "<group>"; };
 		9A6C90B9220FFD4100938542 /* PictureCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PictureCollectionViewController.h; sourceTree = "<group>"; };
 		9A6C90BA220FFD4100938542 /* PictureCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureCollectionViewController.m; sourceTree = "<group>"; };
 		9A6C90BD221053E300938542 /* 10017_right_o_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10017_right_o_.png; sourceTree = "<group>"; };
@@ -127,12 +127,12 @@
 		9A6C90B5220FEF4800938542 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9A6C90B6220FEFB500938542 /* SettingSplitViewController.h */,
-				9A6C90B7220FEFB500938542 /* SettingSplitViewController.m */,
 				9A6C90B9220FFD4100938542 /* PictureCollectionViewController.h */,
 				9A6C90BA220FFD4100938542 /* PictureCollectionViewController.m */,
 				9A6C90BF221067DF00938542 /* AnnotationViewController.h */,
 				9A6C90C0221067DF00938542 /* AnnotationViewController.m */,
+				9A3EA96F22128CE000654254 /* PictureTypeTableViewController.h */,
+				9A3EA97022128CE000654254 /* PictureTypeTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -393,8 +393,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A6C90C1221067DF00938542 /* AnnotationViewController.m in Sources */,
-				9A6C90B8220FEFB500938542 /* SettingSplitViewController.m in Sources */,
 				9AEC905A21EF2B7500A332E7 /* AppDelegate.m in Sources */,
+				9A3EA97122128CE000654254 /* PictureTypeTableViewController.m in Sources */,
 				9AEC906B21EF2B7700A332E7 /* main.m in Sources */,
 				9A3EA9642211B33C00654254 /* DismissController.m in Sources */,
 				9A6C90BB220FFD4200938542 /* PictureCollectionViewController.m in Sources */,
@@ -580,7 +580,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ai.doai.annotation-tool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -600,7 +600,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ai.doai.annotation-tool";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
