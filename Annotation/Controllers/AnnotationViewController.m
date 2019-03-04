@@ -82,6 +82,11 @@
     self.saveButton.title = [NSString stringWithFormat:@"Save(%d)", saveCount];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.view makeToast:@"화면을 1초간 누르고 있으면(롱탭) 상단/하단 바가 나타납니다."];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
