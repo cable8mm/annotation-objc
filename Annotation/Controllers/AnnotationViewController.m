@@ -11,13 +11,19 @@
 #import "UIView+Toast.h"
 
 @interface AnnotationViewController ()
+@property (nonatomic, assign) int content_id;
 @property (weak, nonatomic) IBOutlet UIImageView *fullsizeImage;
 @property (weak, nonatomic) CAShapeLayer *pathLayer;
 @property (strong, nonatomic) UIBezierPath *path;
 @property (nonatomic, assign) CGPoint prevPoint;
 @property (strong, nonatomic) IBOutlet UIView *mainView;
-@property (strong, nonatomic) NSMutableArray *shapeLayers;
-@property (strong, nonatomic) NSMutableArray *redoShapeLayers;
+
+/* 필요한 저장 데이터 */
+@property (strong, nonatomic) NSMutableArray *shapeLayers;  // Annotation Storage
+@property (strong, nonatomic) NSMutableArray *redoShapeLayers;  // Annotation Redo Storage
+@property (strong, nonatomic) NSMutableArray *saveTouchPoints;  // coordinate array
+
+/* 버튼 */
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *undoButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *redoButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
@@ -85,6 +91,31 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self.view makeToast:@"화면을 1초간 누르고 있으면(롱탭) 상단/하단 바가 나타납니다."];
+    
+    // 저장된 draw 값을 다시 표여준다.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *saveTouchPointData = [defaults objectForKey:[NSString stringWithFormat:@"saveTouchPointData%d", self.content_id]];
+    NSArray *savedTouchPoints = [NSArray arrayWithArray:[NSKeyedUnarchiver unarchiveObjectWithData:saveTouchPointData]];
+
+    if(savedTouchPoints != nil) {
+        [self.saveTouchPoints addObjectsFromArray:savedTouchPoints];
+        
+        if(self.saveTouchPoints != nil && [self.saveTouchPoints count] > 0) {
+            for(int i=0; i < [self.saveTouchPoints count]/2; i++) {
+                [self drawLine:[self.saveTouchPoints objectAtIndex:(i*2)] y:[self.saveTouchPoints objectAtIndex:(i*2+1)]];
+                NSLog(@"drawLine x : %@ y : %@", [self.saveTouchPoints objectAtIndex:(i*2)], [self.saveTouchPoints objectAtIndex:(i*2+1)]);
+            }
+        }
+    }
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *saveTouchPointData = [NSKeyedArchiver archivedDataWithRootObject:self.saveTouchPoints];
+    [defaults setObject:saveTouchPointData forKey: [NSString stringWithFormat:@"saveTouchPointData%d", self.content_id]];
+    [defaults synchronize];
 }
 
 - (void)viewDidLoad {
@@ -112,23 +143,29 @@
     self.shapeLayers = [[NSMutableArray alloc] init];
     self.redoShapeLayers = [[NSMutableArray alloc] init];
     self.saveCount  = 0;
+    self.saveTouchPoints = [[NSMutableArray alloc] initWithCapacity:15];
+    self.content_id = (int)self.responseOsRawPicture[@"OsRawPicture"][@"id"];
 }
 
-- (void) dragging: (UIPanGestureRecognizer*) p {
-    UIView* vv = p.view;
-    if (p.state == UIGestureRecognizerStateBegan ||
-        p.state == UIGestureRecognizerStateChanged) {
-        CGPoint delta = [p translationInView: vv.superview];
-        CGPoint c = vv.center;
-        c.x += delta.x; c.y += delta.y;
-        vv.center = c;
-        [p setTranslation: CGPointZero inView: vv.superview];
+-(BOOL) isClosedPoint:(CGPoint)point {
+    if(self.saveTouchPoints != nil && [self.saveTouchPoints count] >= 2) {
+        CGPoint initialPoint = CGPointMake([[self.saveTouchPoints objectAtIndex:0] floatValue], [[self.saveTouchPoints objectAtIndex:1] floatValue]);
+        NSLog(@"Distance : %f, %F, %f, %f, %f", initialPoint.x, initialPoint.y, point.x, point.y, sqrt((point.x - initialPoint.x)*(point.x - initialPoint.x) + (point.y = initialPoint.y)*(point.y = initialPoint.y)));
+        
+        if(sqrt((point.x - initialPoint.x)*(point.x - initialPoint.x) + (point.y - initialPoint.y)*(point.y - initialPoint.y)) < 25) {
+            return YES;
+        }
     }
+    return NO;
 }
 
--(void) drawPath:(UITapGestureRecognizer *) sender
-{
-    CGPoint touchPoint = [sender locationInView: self.mainView];
+-(void) drawLine:(NSNumber *)x y:(NSNumber *)y {
+    CGPoint touchPoint = CGPointMake((CGFloat)[x floatValue], (CGFloat)[y floatValue]);
+
+    // 첫번째 좌표와 거리가 얼마 되지 않으면 첫번째 좌표로 교정
+    if([self isClosedPoint:touchPoint]) {
+        touchPoint = CGPointMake([[self.saveTouchPoints objectAtIndex:0] floatValue], [[self.saveTouchPoints objectAtIndex:1] floatValue]);
+   }
 
     if(self.prevPoint.x != 0. && self.prevPoint.y != 0.) {
         UIBezierPath *path = [UIBezierPath bezierPath];
@@ -144,10 +181,27 @@
         [self.view.layer addSublayer:shapeLayer];
         [self.shapeLayers addObject:shapeLayer];
     }
-
+    
     [self controlUnRedoButtonEnabledAndSetPrevPoint];
     
+    // 탭 저장 히스토리
     self.prevPoint = touchPoint;
+
+    // 첫번째 좌표와 거리가 얼마 되지 않으면 save 함
+    if([self isClosedPoint:touchPoint]) {
+        [self save:self];
+    }
+}
+
+-(void) drawPath:(UITapGestureRecognizer *) sender
+{
+    CGPoint touchPoint = [sender locationInView: self.mainView];
+    [self drawLine:[NSNumber numberWithFloat:touchPoint.x] y:[NSNumber numberWithFloat:touchPoint.y]];
+    
+    [self.saveTouchPoints addObject:[NSNumber numberWithFloat:touchPoint.x]];
+    [self.saveTouchPoints addObject:[NSNumber numberWithFloat:touchPoint.y]];
+    
+    NSLog(@"self.saveTouchPoints = %@", self.saveTouchPoints);
 }
 
 -(void) showHideNavbarToolbar:(UILongPressGestureRecognizer *) sender
