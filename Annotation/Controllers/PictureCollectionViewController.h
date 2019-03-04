@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PictureCollectionViewController : UICollectionViewController
-
+@property (nonatomic) int os_picture_type_id;
+@property (nonatomic, retain) NSString *typeName;
 @end
 
 NS_ASSUME_NONNULL_END

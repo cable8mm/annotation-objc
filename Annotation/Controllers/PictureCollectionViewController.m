@@ -10,6 +10,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <AFNetworking/AFNetworking.h>
 #import "AnnotationViewController.h"
+#import "AppDelegate.h"
 
 @interface PictureCollectionViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, retain) NSMutableArray *responseOsRawPictures;
@@ -24,18 +25,23 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
-        
-    [self performSegueWithIdentifier:@"showIntroduce" sender:self];
-
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+    
+    if(delegate.isShowedIntroduce == 0) {
+        [self performSegueWithIdentifier:@"showIntroduce" sender:self];
+        delegate.isShowedIntroduce = 1;
+    }
     // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+    
     self.responseOsRawPictures   = [NSMutableArray array];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
-
-    NSString *url = [API_SERVER_PREFIX stringByAppendingString:@"os_raw_pictures.json"];
+    
+    //    NSString *url = [API_SERVER_PREFIX stringByAppendingString:@"os_raw_pictures.json?page=1&os_picture_type_id=1"];
+    NSString *url = [NSString stringWithFormat:@"%@%@%d", API_SERVER_PREFIX, @"os_raw_pictures.json?page=1&os_picture_type_id=", self.os_picture_type_id];
     [manager GET:url
       parameters:nil
         progress:nil
@@ -90,7 +96,9 @@ static NSString * const reuseIdentifier = @"Cell";
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if([segue.identifier isEqualToString:@"showAnnotationViewController"]) {
-        AnnotationViewController *annotationViewController = [segue destinationViewController];
+        UINavigationController *navController = [segue destinationViewController];
+        AnnotationViewController *annotationViewController = (AnnotationViewController *)navController.topViewController;
+//        AnnotationViewController *annotationViewController = [segue destinationViewController];
         NSIndexPath *indexPath = (NSIndexPath *)sender;
         annotationViewController.responseOsRawPicture = self.responseOsRawPictures[indexPath.row];
     }

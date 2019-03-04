@@ -8,20 +8,76 @@
 
 #import "AnnotationViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "UIView+Toast.h"
 
 @interface AnnotationViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *fullsizeImage;
 @property (weak, nonatomic) CAShapeLayer *pathLayer;
 @property (strong, nonatomic) UIBezierPath *path;
+@property (nonatomic, assign) CGPoint prevPoint;
+@property (strong, nonatomic) IBOutlet UIView *mainView;
+@property (strong, nonatomic) NSMutableArray *shapeLayers;
+@property (strong, nonatomic) NSMutableArray *redoShapeLayers;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *undoButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *redoButton;
 
 @end
 
 @implementation AnnotationViewController
 
+- (IBAction)redo:(id)sender {
+    if([self.redoShapeLayers count] > 0) {
+        CAShapeLayer *shapeLayer = [self.redoShapeLayers lastObject];
+        [self.view.layer addSublayer:shapeLayer];
+        [self.shapeLayers addObject:shapeLayer];
+        [self.redoShapeLayers removeLastObject];
+    } else {
+        [self.view makeToast:@"no more REDO"];
+    }
+
+    [self controlUnRedoButtonEnabledAndSetPrevPoint];
+}
+
+- (IBAction)undo:(id)sender {
+    if([self.shapeLayers count] > 0) {
+        CAShapeLayer *shapeLayer = [self.shapeLayers lastObject];
+        [shapeLayer removeFromSuperlayer];
+        
+        [self.redoShapeLayers addObject:[self.shapeLayers lastObject]];
+        [self.shapeLayers removeLastObject];
+    } else {
+        [self.view makeToast:@"no more UNDO"];
+    }
+    
+    [self controlUnRedoButtonEnabledAndSetPrevPoint];
+}
+
+- (void) controlUnRedoButtonEnabledAndSetPrevPoint {
+    if([self.redoShapeLayers count] > 0) {
+        [self.redoButton setEnabled:YES];
+    } else {
+        [self.redoButton setEnabled:NO];
+    }
+    
+    if([self.shapeLayers count] > 0) {
+        [self.undoButton setEnabled:YES];
+    } else {
+        [self.undoButton setEnabled:NO];
+    }
+}
+
+- (IBAction)save:(id)sender {
+    for (CAShapeLayer *shapeLayer in self.shapeLayers) {
+        shapeLayer.strokeColor = [UIColor redColor].CGColor;
+    }
+    
+    self.prevPoint = CGPointMake(0., 0.);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UITapGestureRecognizer *dismissGestureRecognition = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showHideNavbar:)];
+    UITapGestureRecognizer *dismissGestureRecognition = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showHideNavbarToolbar:)];
     dismissGestureRecognition.numberOfTapsRequired = 2;
     [self.view addGestureRecognizer:dismissGestureRecognition];
 
@@ -37,17 +93,10 @@
     NSString *original_name =self.responseOsRawPicture[@"OsRawPicture"][@"original_name"];
     [self.fullsizeImage sd_setImageWithURL:[NSURL URLWithString:[API_SERVER_PREFIX stringByAppendingString:original_name]]
                  placeholderImage:[UIImage imageNamed:@"doai_logo.jpg"]];
-    
-    CAShapeLayer *pathLayer = [CAShapeLayer layer];
-//    [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(50, 50, 100, 100)] CGPath]];
-    self.path = [[UIBezierPath alloc] init];
 
-//    [self.path moveToPoint:CGPointMake(0, 0)];
-//    [self.path addLineToPoint:CGPointMake(100, 0)];
-//    [self.path addLineToPoint:CGPointMake(100, 100)];
-    pathLayer.path = self.path.CGPath;
-
-    [[self.view layer] addSublayer:pathLayer];
+    // init
+    self.shapeLayers = [[NSMutableArray alloc] init];
+    self.redoShapeLayers = [[NSMutableArray alloc] init];
 }
 
 - (void) dragging: (UIPanGestureRecognizer*) p {
@@ -62,22 +111,41 @@
     }
 }
 
--(void) drawPath:(id) sender
+-(void) drawPath:(UITapGestureRecognizer *) sender
 {
-//    [self.path moveToPoint:CGPointMake(0, 0)];
-//    [self.path addLineToPoint:CGPointMake(100, 0)];
-//    [self.path addLineToPoint:CGPointMake(100, 100)];
+    CGPoint touchPoint = [sender locationInView: self.mainView];
+
+    if(self.prevPoint.x != 0. && self.prevPoint.y != 0.) {
+        UIBezierPath *path = [UIBezierPath bezierPath];
+        [path moveToPoint:CGPointMake(self.prevPoint.x, self.prevPoint.y)];
+        [path addLineToPoint:CGPointMake(touchPoint.x, touchPoint.y)];
+        
+        CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+        shapeLayer.path = [path CGPath];
+        shapeLayer.strokeColor = [[UIColor blueColor] CGColor];
+        shapeLayer.lineWidth = 3.0;
+        shapeLayer.fillColor = [[UIColor clearColor] CGColor];
+        
+        [self.view.layer addSublayer:shapeLayer];
+        [self.shapeLayers addObject:shapeLayer];
+    }
+
+    [self controlUnRedoButtonEnabledAndSetPrevPoint];
+    
+    self.prevPoint = touchPoint;
 }
 
--(void) showHideNavbar:(id) sender
+-(void) showHideNavbarToolbar:(id) sender
 {
     if (self.navigationController.navigationBar.hidden == NO)
     {
         [self.navigationController setNavigationBarHidden:YES animated:YES];
+        [self.navigationController setToolbarHidden:YES animated:YES];
     }
     else if (self.navigationController.navigationBar.hidden == YES)
     {
         [self.navigationController setNavigationBarHidden:NO animated:YES];
+        [self.navigationController setToolbarHidden:NO animated:YES];
     }
 }
 

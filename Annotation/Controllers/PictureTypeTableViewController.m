@@ -7,6 +7,8 @@
 //
 
 #import "PictureTypeTableViewController.h"
+#import "PictureCollectionViewController.h"
+#import "AppDelegate.h"
 
 @interface PictureTypeTableViewController ()
 @property (nonatomic, retain) NSArray *pictureTypes;
@@ -23,7 +25,22 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.pictureTypes = @[@"Chest X-ray", @"Fundus Optics", @"2D pathology(breast cancer)"];
+    self.pictureTypes = @[@"All", @"Chest X-ray", @"Fundus Optics", @"2D pathology(breast cancer)"];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+
+    if(delegate.isShowedIntroduce == 0) {
+        NSIndexPath *selectedCellIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView selectRowAtIndexPath:selectedCellIndexPath
+                           animated:YES
+                     scrollPosition:UITableViewScrollPositionNone];
+        [self performSegueWithIdentifier:@"showPictureCollectionViewController" sender:self];
+    }
+//    [self.tableView.delegate tableView:self.tableView didSelectRowAtIndexPath:selectedCellIndexPath];
 }
 
 #pragma mark - Table view data source
@@ -80,14 +97,20 @@
 }
 */
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    NSLog(@"===");
+    if([segue.identifier isEqualToString:@"showPictureCollectionViewController"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        UINavigationController *navController = [segue destinationViewController];
+        PictureCollectionViewController *pictureCollectionViewController = (PictureCollectionViewController *)navController.topViewController;
+        pictureCollectionViewController.os_picture_type_id = (int)indexPath.row;
+        pictureCollectionViewController.title = self.pictureTypes[indexPath.row];
+    }
 }
-*/
 
 @end
