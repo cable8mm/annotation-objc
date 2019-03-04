@@ -77,8 +77,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    UITapGestureRecognizer *dismissGestureRecognition = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showHideNavbarToolbar:)];
-    dismissGestureRecognition.numberOfTapsRequired = 2;
+    UILongPressGestureRecognizer *dismissGestureRecognition = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(showHideNavbarToolbar:)];
+    [dismissGestureRecognition setNumberOfTapsRequired:0]; // Set your own number here
+    [dismissGestureRecognition setMinimumPressDuration:1.0];
     [self.view addGestureRecognizer:dismissGestureRecognition];
 
     UITapGestureRecognizer *drawGestureRecognition = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(drawPath:)];
@@ -135,17 +136,19 @@
     self.prevPoint = touchPoint;
 }
 
--(void) showHideNavbarToolbar:(id) sender
+-(void) showHideNavbarToolbar:(UILongPressGestureRecognizer *) sender
 {
-    if (self.navigationController.navigationBar.hidden == NO)
-    {
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
-        [self.navigationController setToolbarHidden:YES animated:YES];
-    }
-    else if (self.navigationController.navigationBar.hidden == YES)
-    {
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
-        [self.navigationController setToolbarHidden:NO animated:YES];
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        if (self.navigationController.navigationBar.hidden == NO)
+        {
+            [self.navigationController setNavigationBarHidden:YES animated:YES];
+            [self.navigationController setToolbarHidden:YES animated:YES];
+        }
+        else if (self.navigationController.navigationBar.hidden == YES)
+        {
+            [self.navigationController setNavigationBarHidden:NO animated:YES];
+            [self.navigationController setToolbarHidden:NO animated:YES];
+        }
     }
 }
 
