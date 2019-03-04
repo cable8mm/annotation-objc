@@ -176,10 +176,10 @@ with core values of challenge and innovation</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zRp-3M-2Q0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="731"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView contentMode="scaleAspectFill" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2W2-P0-5Kn">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="731"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -213,7 +213,7 @@ with core values of challenge and innovation</string>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="rQZ-OL-tIq"/>
-                        <barButtonItem systemItem="save" id="lTc-q0-OlX">
+                        <barButtonItem title="Save" id="lTc-q0-OlX">
                             <connections>
                                 <action selector="save:" destination="3PV-1f-o7c" id="NbF-Yd-eTr"/>
                             </connections>
@@ -236,6 +236,7 @@ with core values of challenge and innovation</string>
                         <outlet property="fullsizeImage" destination="2W2-P0-5Kn" id="lbs-YC-JNT"/>
                         <outlet property="mainView" destination="JQ5-Nd-BBr" id="NcP-l3-7vu"/>
                         <outlet property="redoButton" destination="pOd-jp-eKu" id="5db-0E-8Nt"/>
+                        <outlet property="saveButton" destination="lTc-q0-OlX" id="CFn-cN-Cbe"/>
                         <outlet property="undoButton" destination="Fnd-7T-SYT" id="f30-Lo-Bwr"/>
                     </connections>
                 </viewController>

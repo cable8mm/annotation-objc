@@ -20,6 +20,8 @@
 @property (strong, nonatomic) NSMutableArray *redoShapeLayers;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *undoButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *redoButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+@property (nonatomic) int saveCount;
 
 @end
 
@@ -72,6 +74,12 @@
     }
     
     self.prevPoint = CGPointMake(0., 0.);
+    self.saveCount++;
+}
+
+- (void) setSaveCount:(int)saveCount {
+    _saveCount = saveCount;
+    self.saveButton.title = [NSString stringWithFormat:@"Save(%d)", saveCount];
 }
 
 - (void)viewDidLoad {
@@ -98,6 +106,7 @@
     // init
     self.shapeLayers = [[NSMutableArray alloc] init];
     self.redoShapeLayers = [[NSMutableArray alloc] init];
+    self.saveCount  = 0;
 }
 
 - (void) dragging: (UIPanGestureRecognizer*) p {
