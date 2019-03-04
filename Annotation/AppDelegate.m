@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+    
+    NSDictionary *parameters = @{@"uuid":[[UIDevice currentDevice] identifierForVendor]};
+    
+    NSString *url = [API_SERVER_PREFIX stringByAppendingString:@"os_app_users/add.json"];
+    [manager POST:url
+      parameters:parameters
+        progress:nil
+         success:^(NSURLSessionTask *task, id responseObject) {
+             NSLog(@"%@", responseObject);
+         } failure:^(NSURLSessionTask *operation, NSError *error) {
+             NSLog(@"%@", error);
+         }];
+
     return YES;
 }
 
