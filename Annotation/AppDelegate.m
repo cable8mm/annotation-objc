@@ -26,7 +26,7 @@
     
     NSString *url = [API_SERVER_PREFIX stringByAppendingString:@"os_app_users/add.json"];
     [manager POST:url
-      parameters:parameters
+      parameters:parameters 
         progress:nil
          success:^(NSURLSessionTask *task, id responseObject) {
              NSLog(@"%@", responseObject);

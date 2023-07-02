@@ -9,8 +9,12 @@
 #import "AnnotationViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UIView+Toast.h"
+#import "CanvasView.h"
 
-@interface AnnotationViewController ()
+@interface AnnotationViewController () <UIPencilInteractionDelegate>
+
+// MARK: Properties
+@property (weak, nonatomic) IBOutlet CanvasView *canvasView;
 @property (nonatomic, assign) int content_id;
 @property (weak, nonatomic) IBOutlet UIImageView *fullsizeImage;
 @property (weak, nonatomic) CAShapeLayer *pathLayer;
@@ -32,6 +36,8 @@
 @end
 
 @implementation AnnotationViewController
+
+// MARK: Actions
 
 - (IBAction)redo:(id)sender {
     if([self.redoShapeLayers count] > 0) {
@@ -120,12 +126,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    UILongPressGestureRecognizer *dismissGestureRecognition = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(showHideNavbarToolbar:)];
-    [dismissGestureRecognition setNumberOfTapsRequired:0]; // Set your own number here
-    [dismissGestureRecognition setMinimumPressDuration:1.0];
-    [self.view addGestureRecognizer:dismissGestureRecognition];
 
+    if (@available(iOS 12.1, *)) {
+        UIPencilInteraction *pencilInteraction = [[UIPencilInteraction alloc] init];
+        pencilInteraction.delegate = self;
+        [self.view addInteraction:pencilInteraction];
+    }
+    
     UITapGestureRecognizer *drawGestureRecognition = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(drawPath:)];
     drawGestureRecognition.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:drawGestureRecognition];
@@ -145,6 +152,32 @@
     self.saveCount  = 0;
     self.saveTouchPoints = [[NSMutableArray alloc] initWithCapacity:15];
     self.content_id = (int)self.responseOsRawPicture[@"OsRawPicture"][@"id"];
+}
+
+// MARK: Touch Handling
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"touches began");
+    [self.canvasView drawTouches:touches withEvent: event];
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"touches move");
+    [self.canvasView drawTouches:touches withEvent: event];
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.canvasView drawTouches:touches withEvent: event];
+    [self.canvasView endTouches:touches cancel:false];
+}
+
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.canvasView endTouches:touches cancel:false];
+}
+
+- (void)touchesEstimatedPropertiesUpdated:(NSSet<UITouch *> *)touches {
+    [self.canvasView updateEstimatedPropertiesForTouches:touches];
 }
 
 -(BOOL) isClosedPoint:(CGPoint)point {
@@ -229,5 +262,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+//func pencilInteractionDidTap(_ interaction: UIPencilInteraction) {
+//    guard UIPencilInteraction.preferredTapAction == .switchPrevious else { return }
+//
+//    /* The tap interaction is a quick way for the user to switch tools within an app.
+//     Toggling the debug drawing mode from Apple Pencil is a discoverable action, as the button
+//     for debug mode is on screen and visually changes to indicate what the tap interaction did.
+//     */
+//    toggleDebugDrawing(sender: debugButton)
+//}
 
 @end

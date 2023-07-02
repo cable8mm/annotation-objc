@@ -12,6 +12,9 @@
 		9A3EA96C2211DA3200654254 /* doai_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A3EA96B2211DA3200654254 /* doai_logo.jpg */; };
 		9A3EA96E2211E90100654254 /* visual-where.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A3EA96D2211E90100654254 /* visual-where.png */; };
 		9A3EA97122128CE000654254 /* PictureTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EA97022128CE000654254 /* PictureTypeTableViewController.m */; };
+		9A66C36E222D4BD600EFB3FD /* CanvasView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A66C36D222D4BD600EFB3FD /* CanvasView.m */; };
+		9A66C372222E4A4000EFB3FD /* LinePoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A66C371222E4A4000EFB3FD /* LinePoint.m */; };
+		9A66C375222E4A5600EFB3FD /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A66C374222E4A5600EFB3FD /* Line.m */; };
 		9A6C90BB220FFD4200938542 /* PictureCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C90BA220FFD4100938542 /* PictureCollectionViewController.m */; };
 		9A6C90BE221053E300938542 /* 10017_right_o_.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6C90BD221053E300938542 /* 10017_right_o_.png */; };
 		9A6C90C1221067DF00938542 /* AnnotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6C90C0221067DF00938542 /* AnnotationViewController.m */; };
@@ -51,6 +54,12 @@
 		9A3EA96D2211E90100654254 /* visual-where.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visual-where.png"; sourceTree = "<group>"; };
 		9A3EA96F22128CE000654254 /* PictureTypeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PictureTypeTableViewController.h; sourceTree = "<group>"; };
 		9A3EA97022128CE000654254 /* PictureTypeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureTypeTableViewController.m; sourceTree = "<group>"; };
+		9A66C36C222D4BD600EFB3FD /* CanvasView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CanvasView.h; sourceTree = "<group>"; };
+		9A66C36D222D4BD600EFB3FD /* CanvasView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CanvasView.m; sourceTree = "<group>"; };
+		9A66C370222E4A4000EFB3FD /* LinePoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinePoint.h; sourceTree = "<group>"; };
+		9A66C371222E4A4000EFB3FD /* LinePoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinePoint.m; sourceTree = "<group>"; };
+		9A66C373222E4A5600EFB3FD /* Line.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Line.h; sourceTree = "<group>"; };
+		9A66C374222E4A5600EFB3FD /* Line.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Line.m; sourceTree = "<group>"; };
 		9A6C90B9220FFD4100938542 /* PictureCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PictureCollectionViewController.h; sourceTree = "<group>"; };
 		9A6C90BA220FFD4100938542 /* PictureCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PictureCollectionViewController.m; sourceTree = "<group>"; };
 		9A6C90BD221053E300938542 /* 10017_right_o_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10017_right_o_.png; sourceTree = "<group>"; };
@@ -120,8 +129,31 @@
 		9A3EA9652211BED100654254 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				9A66C370222E4A4000EFB3FD /* LinePoint.h */,
+				9A66C371222E4A4000EFB3FD /* LinePoint.m */,
+				9A66C373222E4A5600EFB3FD /* Line.h */,
+				9A66C374222E4A5600EFB3FD /* Line.m */,
 			);
 			path = Libraries;
+			sourceTree = "<group>";
+		};
+		9A66C36B222D4B9400EFB3FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A66C36C222D4BD600EFB3FD /* CanvasView.h */,
+				9A66C36D222D4BD600EFB3FD /* CanvasView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9A66C36F222E483900EFB3FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9AEC906121EF2B7500A332E7 /* Main.storyboard */,
+				9AEC906421EF2B7700A332E7 /* Assets.xcassets */,
+				9AEC906621EF2B7700A332E7 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		9A6C90B5220FEF4800938542 /* Controllers */ = {
@@ -173,17 +205,16 @@
 		9AEC905721EF2B7500A332E7 /* Annotation */ = {
 			isa = PBXGroup;
 			children = (
+				9A66C36F222E483900EFB3FD /* Resources */,
 				9A3EA9652211BED100654254 /* Libraries */,
 				9A3EA9612211B31800654254 /* Segues */,
 				9A6C90BC2210511800938542 /* Images */,
+				9A66C36B222D4B9400EFB3FD /* Views */,
 				9A6C90B5220FEF4800938542 /* Controllers */,
 				9AEC905821EF2B7500A332E7 /* AppDelegate.h */,
 				9AEC905921EF2B7500A332E7 /* AppDelegate.m */,
-				9AEC906121EF2B7500A332E7 /* Main.storyboard */,
-				9AEC906421EF2B7700A332E7 /* Assets.xcassets */,
-				9AEC906621EF2B7700A332E7 /* LaunchScreen.storyboard */,
-				9AEC906921EF2B7700A332E7 /* Info.plist */,
 				9AEC906A21EF2B7700A332E7 /* main.m */,
+				9AEC906921EF2B7700A332E7 /* Info.plist */,
 			);
 			path = Annotation;
 			sourceTree = "<group>";
@@ -394,10 +425,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A66C372222E4A4000EFB3FD /* LinePoint.m in Sources */,
+				9A66C375222E4A5600EFB3FD /* Line.m in Sources */,
 				9A6C90C1221067DF00938542 /* AnnotationViewController.m in Sources */,
 				9AEC905A21EF2B7500A332E7 /* AppDelegate.m in Sources */,
 				9A3EA97122128CE000654254 /* PictureTypeTableViewController.m in Sources */,
 				9AEC906B21EF2B7700A332E7 /* main.m in Sources */,
+				9A66C36E222D4BD600EFB3FD /* CanvasView.m in Sources */,
 				9A3EA9642211B33C00654254 /* DismissController.m in Sources */,
 				9A6C90BB220FFD4200938542 /* PictureCollectionViewController.m in Sources */,
 			);
