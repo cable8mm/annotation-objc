@@ -11,10 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CanvasView : UIView
-@property (strong, nonatomic) NSMutableArray *lines;  // Annotation Storage
-@property (strong, nonatomic) NSMutableArray *finishedLines;  // Annotation Redo Storage
-@property (strong, nonatomic) NSMapTable *activeLines;  // coordinate array
-@property (strong, nonatomic) NSMapTable *pendingLines;  // coordinate array
+@property (strong, nonatomic) NSMutableArray *lines;         // Annotation Storage
+@property (strong, nonatomic) NSMutableArray *finishedLines; // Annotation Redo Storage
+@property (strong, nonatomic) NSMapTable *activeLines;       // coordinate array
+@property (strong, nonatomic) NSMapTable *pendingLines;      // coordinate array
 
 - (void)clear;
 - (void)drawTouches:(NSSet *)touches withEvent:(UIEvent *)event;

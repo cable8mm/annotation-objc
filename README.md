@@ -1,13 +1,20 @@
-# Annotation for iOS
+# Annotation for objc
 
-이 소스코드는 아이패드에서 작동하는 Annotation 도구입니다.
+![Resource for annotation](docs/visual-where.png?raw=true)
 
-## 중요 포인트
+Annotation means it can be picked up in your drawing, so it can be used in medical labs, hospitals, etc. It has been made for medical resources, especially X-rays.
 
-최신 개발 언어는 Swift이지만, 언어 버전이 올라가면서 하위 호환성 문제가 생기기 때문에 Objective-C로 제작됩니다.
+## Tips
 
-소스 패키지는 CocoaPod이 사용됩니다.
+While Swift is the latest programming language, as language versions advance, compatibility issues arise, so it is developed in Objective-C. And the source package is used with CocoaPods.
 
-## 다른 프로젝트와의 연결
+## Coding style
 
-이 프로젝트에서 이미지 프로세싱을 직접 처리한다면 서버의 이미지 변환과 완벽히 같아야 합니다. skia가 멀티플랫폼 환경을 지원하지만, 대부분의 이미지 프로세스 라이브러리가 c로 제작되기 때문에 이 프로젝트로 포팅할 경우 정밀한 테스팅이 되어야 합니다.
+```sh
+find . -name \* -print0 | xargs -0 -n1 clang-format -i
+```
+
+## Refer to
+
+* [https://github.com/cable8mm/annotation-objc](https://github.com/cable8mm/annotation-objc)
+* [https://github.com/cable8mm/annotation-ios](https://github.com/cable8mm/annotation-ios)

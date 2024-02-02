@@ -11,15 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef enum PointType {
-    standard    = 0,
-    coalesced,
-    predicted,
-    needsUpdate,
-    updated,
-    cancelled,
-    finger
-} PointType;
+typedef enum PointType { standard = 0, coalesced, predicted, needsUpdate, updated, cancelled, finger } PointType;
 
 @interface LinePoint : NSObject
 @property (nonatomic) int sequenceNumber;
@@ -35,9 +27,12 @@ typedef enum PointType {
 @property (nonatomic) PointType pointType;
 @property (nonatomic) NSNumber *estimationUpdateIndex;
 
--(CGFloat) magnitude;
--(id)initWithTouch:(UITouch*)touch sequenceNumber:(int)sequenceNumber pointType:(PointType)pointType view: (UIView*)view;
--(BOOL)updateWithTouch:(UITouch*)touch;
+- (CGFloat)magnitude;
+- (id)initWithTouch:(UITouch *)touch
+     sequenceNumber:(int)sequenceNumber
+          pointType:(PointType)pointType
+               view:(UIView *)view;
+- (BOOL)updateWithTouch:(UITouch *)touch;
 
 @end
 
