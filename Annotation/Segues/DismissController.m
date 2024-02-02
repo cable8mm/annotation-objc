@@ -10,11 +10,10 @@
 
 @implementation DismissController
 
-- (void)perform{
-    
+- (void)perform
+{
     UIViewController *sourceVC = self.sourceViewController;
-    [sourceVC.presentingViewController dismissViewControllerAnimated:YES
-                                                          completion:nil];
+    [sourceVC.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

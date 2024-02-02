@@ -10,37 +10,40 @@
 #import "Line.h"
 
 @implementation CanvasView
-- (id)init {
+- (id)init
+{
     self = [super init];
     if (self) {
         // NSMapTable<UITouch, Line>
-        self.activeLines    = [NSMapTable<UITouch*, Line*> strongToStrongObjectsMapTable];
+        self.activeLines = [NSMapTable<UITouch *, Line *> strongToStrongObjectsMapTable];
     }
     return self;
 }
 
-- (void)clear {
+- (void)clear
+{
     [self.lines removeAllObjects];
     [self setNeedsDisplay];
 }
 
-- (void)drawTouches:(NSSet *)touches withEvent:(UIEvent *)event {
-    for(UITouch *touch in touches) {
-        
+- (void)drawTouches:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    for (UITouch *touch in touches) {
     }
 }
 
-- (void)endTouches:(NSSet *)touches cancel:(BOOL)cancel {
-    
+- (void)endTouches:(NSSet *)touches cancel:(BOOL)cancel
+{
 }
 
-- (void)updateEstimatedPropertiesForTouches:(NSSet<UITouch *> *)touches {
-    
+- (void)updateEstimatedPropertiesForTouches:(NSSet<UITouch *> *)touches
+{
 }
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
+- (void)drawRect:(CGRect)rect
+{
     // Drawing code
 }
 
